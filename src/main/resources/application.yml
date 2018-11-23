@@ -1,0 +1,28 @@
+server:
+  port: 8082
+spring:
+  mvc:
+   view:
+    prefix: /
+    suffix: jsp
+  profiles:
+    active: test2
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.16.1.253:3306/linayi?autoReconnect=true
+    username: dev_ess
+    password: dev_ess
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+mybatis:
+  mapper-locations: classpath:com/wei/mapper/*.xml
+  type-aliases-package: classpath:com.wei.bo
+
+  #log4j打印
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+my:
+  name:

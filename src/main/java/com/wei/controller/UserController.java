@@ -31,6 +31,8 @@ public class UserController {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private User user;
 
     @RequestMapping(value = "/index/{id}/{name}",method = RequestMethod.GET)
     public String index(@PathVariable("id") Integer id,@PathVariable("name") String name) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException, ClassNotFoundException {
@@ -113,5 +115,9 @@ public class UserController {
         model.addAttribute("birthday", new Date());
         return "HelloThymeleaf";
     }
-
+    @RequestMapping("/user")
+    @ResponseBody
+    public User getUser(Model model) {
+        return user;
+    }
 }

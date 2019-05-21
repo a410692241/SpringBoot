@@ -1,18 +1,22 @@
 server:
-  port: 8082
+  port: 8083
+#  tomcat:
+    #api访问日志记录到文档
+#    accesslog:
+#      enabled: true
+#      directory: E:/logs
 spring:
   mvc:
    view:
     prefix: /
     suffix: jsp
   profiles:
-    active: test2
-
+    active:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.16.1.253:3306/linayi?autoReconnect=true
-    username: dev_ess
-    password: dev_ess
+    url: jdbc:mysql://localhost:3306/test?autoReconnect=true
+    username: root
+    password: root
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
@@ -23,6 +27,5 @@ mybatis:
   #log4j打印
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
 my:
-  name:
+  name: Awake-HU

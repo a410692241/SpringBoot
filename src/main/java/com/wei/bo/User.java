@@ -1,5 +1,7 @@
 package com.wei.bo;
 
+import org.springframework.stereotype.Service;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
  * user
  * @author 
  */
+@Service
 public class User implements Serializable {
     /**
      * [主键]

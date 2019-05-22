@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -33,6 +34,8 @@ public class UserController {
     private UserDao userDao;
     @Autowired
     private User user;
+    @Autowired
+    private WebApplicationContext webApplicationContext;
 
     @RequestMapping(value = "/index/{id}/{name}",method = RequestMethod.GET)
     public String index(@PathVariable("id") Integer id,@PathVariable("name") String name) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException, ClassNotFoundException {
@@ -117,7 +120,8 @@ public class UserController {
     }
     @RequestMapping("/user")
     @ResponseBody
-    public User getUser(Model model) {
-        return user;
+    public Object getUser(Model model) {
+        Map<String, User> beansOfType = webApplicationContext.getBeansOfType(User.class);
+        return beansOfType;
     }
 }

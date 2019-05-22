@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**运用于异常处理的视图控制类
+/**
+ * 运用于异常处理的视图控制类
  * 根据捕获不同的异常进而跳转到不同的页面
+ *
  * @author user
  */
 

@@ -2,10 +2,12 @@ package com.wei.dao;
 
 import com.wei.bo.User;
 import com.wei.bo.UserExample;
+
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
 //dao类应该加上扫描标识
 @Mapper
 public interface UserDao {

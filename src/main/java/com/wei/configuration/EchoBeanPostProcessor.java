@@ -5,11 +5,11 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.stereotype.Component;
 
-/** 
-* @Description: 对bean创建进行前置后置操作
-* @Author: Awake-Hu 
-* @Date: 2019/5/21 
-*/
+/**
+ * @Description: 对bean创建进行前置后置操作
+ * @Author: Awake-Hu
+ * @Date: 2019/5/21
+ */
 @Component
 public class EchoBeanPostProcessor implements BeanPostProcessor {
 

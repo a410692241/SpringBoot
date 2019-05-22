@@ -3,10 +3,9 @@ package com.wei.bo;
 import javax.validation.constraints.NotNull;
 
 /**
- *
  * @author user
  */
-public class UserBO  extends  BaseBO{
+public class UserBO extends BaseBO {
     private Integer id;
     private String name;
 

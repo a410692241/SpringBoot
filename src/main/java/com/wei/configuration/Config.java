@@ -16,7 +16,7 @@ public class Config {
 
     /*配置springBootBean*/
     @Bean
-    public FilterRegistrationBean<Filter> registFilter(){
+    public FilterRegistrationBean<Filter> registFilter() {
         FilterRegistrationBean<Filter> filterFilterRegistrationBean = new FilterRegistrationBean<>();
         filterFilterRegistrationBean.setName("MyFilter");
         filterFilterRegistrationBean.setFilter(new Filter() {

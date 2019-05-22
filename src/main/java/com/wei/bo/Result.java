@@ -5,7 +5,7 @@ package com.wei.bo;
  * @author Chery
  * @date 2017/3/24 - 下午11:22
  */
-public class Result<T> extends BaseBO{
+public class Result<T> extends BaseBO {
 
     private int code;
     private String msg;

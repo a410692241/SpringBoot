@@ -5,6 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 //@Configuration  //开启之后默认添加到springBoot中,启动就会开始执行
 //@Component //开启之后默认添加到springBoot中,启动就会开始执行
 @EnableScheduling

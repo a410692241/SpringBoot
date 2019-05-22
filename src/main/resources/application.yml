@@ -1,15 +1,15 @@
 server:
   port: 8083
-#  tomcat:
-    #api访问日志记录到文档
+    #  tomcat:
+  #api访问日志记录到文档
 #    accesslog:
 #      enabled: true
 #      directory: E:/logs
 spring:
   mvc:
-   view:
-    prefix: /
-    suffix: jsp
+    view:
+      prefix: /
+      suffix: jsp
   profiles:
     active:
   datasource:
@@ -29,3 +29,5 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 my:
   name: Awake-HU
+
+

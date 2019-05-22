@@ -37,8 +37,8 @@ public class UserController {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-    @RequestMapping(value = "/index/{id}/{name}",method = RequestMethod.GET)
-    public String index(@PathVariable("id") Integer id,@PathVariable("name") String name) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException, ClassNotFoundException {
+    @RequestMapping(value = "/index/{id}/{name}", method = RequestMethod.GET)
+    public String index(@PathVariable("id") Integer id, @PathVariable("name") String name) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException, ClassNotFoundException {
         UserBO userBO = new UserBO();
         userBO.setId(id);
         userBO.setName(name);
@@ -47,19 +47,19 @@ public class UserController {
     }
 
     @RequestMapping("/hello")
-    public String hello(UserBO user){
+    public String hello(UserBO user) {
         return "jsp/hello";
     }
 
 
     @RequestMapping("/err")
-    public String error( UserBO user){
+    public String error(UserBO user) {
         throw new NullPointerException();
     }
 
     @RequestMapping("/illegeMath")
-    public String o( UserBO user){
-        Integer s= 1 / 0;
+    public String o(UserBO user) {
+        Integer s = 1 / 0;
         return s.toString();
     }
 
@@ -70,7 +70,7 @@ public class UserController {
             public void run() {
                 System.out.println("定时任务体" + new Date());
             }
-        },0,2000);
+        }, 0, 2000);
     }
 
 
@@ -99,13 +99,14 @@ public class UserController {
     }
 
 
-/*thymeleaf条件语句*/
+    /*thymeleaf条件语句*/
     @RequestMapping("/thymeleaf")
     public String thymeleaf(Model model) {
         model.addAttribute("name", "hu");
         model.addAttribute("age", 16);
         return "HelloThymeleaf";
     }
+
     /*thymeleaf循环结构*/
     @RequestMapping("/foreach")
     public String foreach(Model model) {
@@ -114,10 +115,11 @@ public class UserController {
         eachStr.add("b");
         eachStr.add("c");
         eachStr.add("d");
-        model.addAttribute("eachStr",eachStr);
+        model.addAttribute("eachStr", eachStr);
         model.addAttribute("birthday", new Date());
         return "HelloThymeleaf";
     }
+
     @RequestMapping("/user")
     @ResponseBody
     public Object getUser(Model model) {
